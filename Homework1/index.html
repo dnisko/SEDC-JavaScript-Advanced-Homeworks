@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Homework #1</title>
+</head>
+<body>
+    <div>
+        <div id="movies">
+            <h1>Movies renting App</h1>
+            <label for="moviesSearch">Enter title of a movie: </label>
+            <input type="text" id="moviesSearch">
+            <br>
+            <br>
+            <button type="button" id="btnMovieSearch">Search</button>
+            <br>
+            <h1 id="movieResult"></h1>
+            <br>
+            <br>
+            <br>
+        </div>
+        <br>
+
+        <div id="reminder">
+            <h1>Reminder App</h1>
+            <form action="" id="reminderForm">
+                <table style="border: 1px solid black;">
+                    <tr>
+                        <td>
+                            <label for="reminderTitle">Reminder title: </label>
+                        </td>
+                        <td>
+                            <input type="text" id="reminderTitle" required>                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="reminderPriority">Reminder priority: </label>
+                        </td>
+                        <td>
+                            <input type="text" id="reminderPriority" required>             
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="reminderColor">Color:&nbsp;&nbsp;</label>
+                        </td>
+                        <td>
+                            <input type="color" id="reminderColor">          
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="reminderDescription">Reminder description: </label>
+                        </td>
+                        <td>
+               
+                            <textarea id="reminderDescription" required></textarea>             
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit" id="btnAddReminder">Add reminder</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <button type="button" id="btnShowReminders">Show all reminders</button>
+                    </td>
+                </tr>
+            </table> 
+            <div id="allReminders"></div>
+            <br>
+            <br>
+            <br>
+        </div>
+        <br>
+        <div id="SW-person">
+            <h1>Star Wars Person Stats</h1>
+            <div id="SW-result"></div>
+            <button type="button" id="btnSW">Get Star Wars Person Stats</button>
+
+
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
