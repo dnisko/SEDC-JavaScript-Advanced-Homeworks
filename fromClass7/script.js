@@ -2,7 +2,7 @@ let url1 = "https://raw.githubusercontent.com/sedc-codecademy/skwd9-04-ajs/main/
 let url2 = "https://dummyjson.com/products";
 let url3 = "https://dummyjson.com/recipes"
 
-function exerciseApi(url)//, renderFunction)
+function exerciseApi(url)
 {
     fetch(url)
     .then((response) => response.json())
