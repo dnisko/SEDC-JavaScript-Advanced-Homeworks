@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALL THE BEER v2</title>
     <link rel="shortcut icon" href="#">
-
+    <!-- <link rel="stylesheet" href="styles/style.css" type="text/css"> -->
+    <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
 </head>
 <body>
   <div id="testingPages"></div>
@@ -24,41 +26,56 @@
         Random beer
       </a>
       <form class="d-flex position-absolute end-0" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchText">
+        <button class="btn btn-outline-success" type="submit" id="searchBtn">Search</button>
       </form>
     </div>
 
-    <div class="container-fluid" id="pages-sort">
-      <div class="dropdown">
-        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="pageSize">
-          Pages per page
-        </button>
-        <ul class="dropdown-menu" id="demolist">
-          <li><a class="dropdown-item">5</a></li>
-          <li><a class="dropdown-item">10</a></li>
-          <li><a class="dropdown-item">20</a></li>
-        </ul>
+    <div class="container text-center"  style="width: 100%;">
+      <div class="row"  style="width: 100%;">
+        <div class="col">
+          <div class="container-fluid" id="pages-sort">
+            <div class="dropdown">
+              <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="pageSize">
+                Pages per page
+              </button>
+              <ul class="dropdown-menu" id="pagesPerPage" style="left: 0;">
+                <li><a class="dropdown-item">5</a></li>
+                <li><a class="dropdown-item">10</a></li>
+                <li><a class="dropdown-item">20</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="container-fluid" id="sort" style="right: 0;">
+            <div class="dropdown">
+              <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="sort">
+                Sort
+              </button>
+              <ul class="dropdown-menu" id="sortBy">
+                <li><a class="dropdown-item">name</a></li>
+                <li><a class="dropdown-item">% alc abv --- abv prop</a></li>
+                <li><a class="dropdown-item">first_brewed</a></li>
+                <li><a class="dropdown-item">bitternes --- ibu prop</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div id="currentPageOf"></div>
-
-    <!-- <div class="container-fluid">
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Pages per page
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">show 5</a></li>
-        <li><a class="dropdown-item" href="#">show 10</a></li>
-        <li><a class="dropdown-item" href="#">show 20</a></li>
-      </ul>
-    </div> -->
   </nav>
 <div id="notification"></div>
-  <div class="container text-center" >
-    <div class="row row-cols-4" id="cardContainer"></div>
-  </div>
+
+<div class="loading primary" id="spinner" hidden></div>
+
+<div class="container text-center" >
+  <div class="row row-cols-4" id="cardContainer"></div>
+</div>
+
 <div id="detailesBeer"></div>
+
   <div id="pagination" class="pagination">
     <li class="page-item">
       <a class="page-link previous disabled" href="">Previous</a>
@@ -67,22 +84,6 @@
       <a class="page-link next" href="">Next</a>
     </li>
   </div>
-  
-  
-  <!-- <div class="card mb-3" style="max-width: 1200px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://images.punkapi.com/v2/keg.png" class="img-fluid rounded-start" alt="Buzz">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Buzz</h5>
-          <p class="card-text">A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script type="module" src="app.js"></script>

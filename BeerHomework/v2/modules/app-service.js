@@ -5,11 +5,10 @@ class ApiService {
     // this.pageSize = pageSize;
   }
 
-  async fetchBeer(url, currentPage, pageSize)
+  async fetchBeer(currentPage, pageSize)
   {
     // url = `${url}?page=${currentPage}&per_page=${pageSize}`;
-    const response = await fetch(`${url}${currentPage}${pageSize}`);
-
+    const response = await fetch(`${this.baseUrl}?page=${currentPage}&per_page=${pageSize}`);
     if (!response.ok)
     {
       throw new Error(`HTTP ERROR. Status: ${response.status}`);
@@ -37,17 +36,12 @@ class ApiService {
     return data;
   }
 
-  // async getBeerByPaging(pagesPerPage) {
-  //   const response = await fetch(`${this.baseUrl}/region/${region}`);
-  //   const data = await response.json();
-  //   return data;
-  // }
-
-  async getMacedoniaNeighbours()
+  async getBeersByName(name)
   {
-    const response = await fetch(`${this.baseUrl}/all`);
+    const response = await fetch(`${this.baseUrl}?beer_name=${name}`);
+    console.log(response);
     const data = await response.json();
-    return data.filter((c) => c.borders?.includes("MKD"));
+    return data;
   }
 }
 
