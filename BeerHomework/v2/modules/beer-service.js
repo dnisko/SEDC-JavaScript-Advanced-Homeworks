@@ -30,15 +30,12 @@ export class BeerService
     this.pagesPerPage = document.getElementById("pagesPerPage");
     this.sort = document.getElementById("sort");
 
-    // this.beerData;
     this.testArray = [];
   }
 
   pages = (size) =>
   {
     pageSize = size;
-    // console.log(pageSize);
-    // console.log(Math.floor(325 / size));
     console.log(this.currentPage);
 
     return Math.floor(325 / size);
@@ -156,7 +153,7 @@ export class BeerService
 
   async searchBeer(searchText)
   {
-    debugger;
+    // debugger;
     this.resetContainers();
     const searchValue = searchText.trim();
     if (!searchValue)
@@ -261,8 +258,10 @@ export class BeerService
     }
   };
 
+  //the idea is to catch the last page from the url, but I couldnt get it to work
   lastPage()
   {
+    //just for the method not to be empty :)
     this.notification.innerHTML = `<div class='alert-danger'>This is the Last page.</div>`;
   };
 
